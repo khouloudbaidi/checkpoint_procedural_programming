@@ -1,0 +1,43 @@
+//Modify the previous algorithm if you use a dot_product function instead of a procedure.
+function dot_product(v1,v2 : ARRAY_Of INTEGER) : INTEGER;
+VAR
+    
+    i : INTEGER ;
+
+BEGIN
+    ps := 0;
+
+    IF (v1.length <> v2.length) THEN
+        write("les vecteurs")
+        
+    WHILE (i<= v1.length-1) DO
+
+        ps := ps + v1[i]*v2[i];
+
+    END_WHILE
+
+    return ps;
+
+    END_IF
+END
+
+ALGORITHM orthogonal_vectors
+VAR
+    v1, v2 : ARRAY_Of INTEGER;
+    ps, n1, n2 : INTEGER;
+BEGIN
+    REPEAT
+        write("donner valeur paire")
+        read(n1)
+        write("donner valeur paire")
+        read(n2)
+    UNTIL (n1 > 0 AND n2 > 0)
+
+    ps := dot_product (v1, v2)
+
+    IF (ps = 0) THEN
+        write("v1 et v2 sont orthogonaux")
+    else 
+        write("v1 et v2 ne sont pas orthogonaux")
+    END_IF
+END
